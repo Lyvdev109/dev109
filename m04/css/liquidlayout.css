@@ -30,9 +30,6 @@ li {
 	background-color: #efefef;
 	padding: 0.5em 0;}
 
-nav, feature, footer, column1, column2, column3, li, footer {
-	display: block;}
-
 #feature, .article {
 	height: 10em;
 	margin-bottom: 1em;
