@@ -1,12 +1,11 @@
 * {
 	font-family: Arial, Verdana, sans-serif;
 	color: #665544;
-	/*text-align: center;-->*/}
+	text-align: center;}
 
 body {
 	width:90%;
-	margin: 0 auto;
-	text-align: center;}
+	margin: 0 auto;}
 
 #content {
 	overflow: auto;}
