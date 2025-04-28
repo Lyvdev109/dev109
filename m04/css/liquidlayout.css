@@ -12,6 +12,8 @@ body {
 	overflow: auto;}
 
 #nav {
+	background-color: #efefef;
+	padding: 0.5em 0;
 	margin: 1%;}
 
 #feature, #footer {
