@@ -1,6 +1,6 @@
 * {
 	font-family: Arial, Verdana, sans-serif;
-	color: #f9aaff;
+	color: #665544;
 	text-align: center;}
 
 body {
@@ -27,10 +27,10 @@ li {
 	padding: 0.5em;}
 
 #nav, #footer {
-	background-color: #f9aaff;
+	background-color: #efefef;
 	padding: 0.5em 0;}
 
 #feature, .article {
 	height: 10em;
 	margin-bottom: 1em;
-	background-color: #f9aaff;}
+	background-color: #efefef;}
