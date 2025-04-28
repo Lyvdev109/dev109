@@ -11,7 +11,10 @@ body {
 #content {
 	overflow: auto;}
 
-#nav, #feature, #footer {
+#nav {
+	margin: 1%;}
+
+#feature, #footer {
 	margin: 1%;}
 
 .column1, .column2, .column3 {
