@@ -5,13 +5,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" type="text/css" href="css/liquidlayout.css">
-		<title>Liquid Layout</title>	
+
+		<title>Liquid Layout</title>
 	</head>
 	<body>
-		<div id = "page">
-		<header>
+		<div id="header">
 			<h1>Logo</h1>
-			<nav>
+			<div id="nav">
 				<ul>
 					<li><a href="">Home</a></li>
 					<li><a href="">Products</a></li>
@@ -19,26 +19,24 @@
 					<li><a href="">About</a></li>
 					<li><a href="">Contact</a></li>
 				</ul>
-			</nav>
-		</header> 
+			</div>
 		</div>
 		<div id="content">
 			<div id="feature">
 				<p>Feature</p>
 			</div>
-			<article>
+			<div class="article column1">
 				<p>Column One</p>
-			</article>
-			<article>
+			</div>
+			<div class="article column2">
 				<p>Column Two</p>
-			</article>
-			<article>
+			</div>
+			<div class="article column3">
 				<p>Column Three</p>
-			</article>
+			</div>
 		</div>
-		<footer>
-			&copy; Copyright 2011
-		</footer>
+		<div id="footer">
+			<p>&copy; Copyright 2011</p>
+		</div>
 	</body>
 </html>
-
