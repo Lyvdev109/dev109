@@ -44,7 +44,11 @@ li {
 	display: inline;
 	padding: 0.5em;}
 
-#nav, #footer {
+#nav {
+	background-color: #eaaaff;
+	padding: 0.5em 0;}
+
+#footer {
 	background-color: #aab4ff;
 	padding: 0.5em 0;}
 
