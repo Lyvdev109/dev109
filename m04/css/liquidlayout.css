@@ -13,27 +13,29 @@ body {
 #nav, #feature, #footer {
 	margin: 1%;}
 
-.column1.article {
-	width: 31.3%;
-	float: left;
-	margin: 1%;
-	background-color: #fffbaa;}
-
 .article {
 	width: 31.3%;
 	float: right;
 	margin: 1%;
 	background-color: #efefef;}
 
-.column2 {
+.column1.article {
 	width: 31.3%;
 	float: left;
-	margin: 1%;}
+	margin: 1%;
+	background-color: #fffbaa;}
 
-.column3 {
+.column2.article {
 	width: 31.3%;
 	float: left;
-	margin: 1%;}
+	margin: 1%;
+	background-color: #ffb6aa}
+
+.column3.article {
+	width: 31.3%;
+	float: left;
+	margin: 1%;
+	background-color: #aaffd6}
 
 .column3 {
 	margin-right: 0%;}
