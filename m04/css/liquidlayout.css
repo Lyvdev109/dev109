@@ -11,10 +11,6 @@ body {
 #content {
 	overflow: auto;}
 
-#nav {
-	background-color: f9aaff;
-	padding: 0.5em 0;}
-
 #nav, #feature, #footer {
 	margin: 1%;}
 
@@ -29,6 +25,10 @@ body {
 li {
 	display: inline;
 	padding: 0.5em;}
+
+#nav {
+	background-color: f9aaff;
+	padding: 0.5em 0;}
 
 #footer {
 	background-color: #ffbdaa;
