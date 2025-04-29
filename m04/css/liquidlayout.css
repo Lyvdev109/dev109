@@ -11,7 +11,7 @@ body {
 #content {
 	overflow: auto;}
 
-#nav, #feature, #footer {
+#feature {
 	margin: 1%;}
 
 .column1, .column2, .column3 {
@@ -28,11 +28,13 @@ li {
 
 #footer {
 	background-color: #ffbdaa;
-	padding: 0.5em 0;}
+	padding: 0.5em 0;
+	margin: 1%}
 
 #nav {
 	background-color: f9aaff;
-	padding: 0.5em 0;}
+	padding: 0.5em 0;
+	margin: 1%;}
 
 #feature, .article {
 	height: 10em;
