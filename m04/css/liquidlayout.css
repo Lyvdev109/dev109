@@ -18,7 +18,12 @@ body {
 	float: right;
 	margin: 1%;}
 
-.column2, .column3 {
+.column2 {
+	width: 31.3%;
+	float: center;
+	margin: 1%;}
+
+.column3 {
 	width: 31.3%;
 	float: left;
 	margin: 1%;}
