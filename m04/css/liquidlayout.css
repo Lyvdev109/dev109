@@ -19,9 +19,15 @@ body {
 	margin: 1%;
 	background-color: #fffbaa;}
 
+.article {
+	width: 31.3%;
+	float: right;
+	margin: 1%;
+	background-color: #efefef;}
+
 .column2 {
 	width: 31.3%;
-	float: center;
+	float: left;
 	margin: 1%;}
 
 .column3 {
@@ -31,13 +37,6 @@ body {
 
 .column3 {
 	margin-right: 0%;}
-
-.article {
-	width: 31.3%;
-	float: right;
-	margin: 1%;
-	background-color: #efefef;}
-
 
 li {
 	display: inline;
