@@ -11,6 +11,10 @@ body {
 #content {
 	overflow: auto;}
 
+#nav {
+	background-color: f9aaff;
+	padding: 0.5em 0;}
+
 #nav, #feature, #footer {
 	margin: 1%;}
 
@@ -35,6 +39,4 @@ li {
 	margin-bottom: 1em;
 	background-color: #efefef;}
 
-#nav {
-	background-color: f9aaff;
-	padding: 0.5em 0;}
+
