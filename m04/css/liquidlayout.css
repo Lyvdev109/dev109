@@ -52,6 +52,12 @@ li {
 	background-color: #aab4ff;
 	padding: 0.5em 0;}
 
+#feature img {
+	width: 50%;
+	height: auto;
+	display: block;
+	margin: 0;}
+	
 #feature, .article {
 	height: 10em;
 	margin-bottom: 1em;
