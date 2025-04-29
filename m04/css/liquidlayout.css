@@ -31,13 +31,15 @@ li {
 	padding: 0.5em 0;
 	margin: 1%}
 
+#nav {
+	background-color: f9aaff;
+	padding: 0.5em 0;
+	margin: 1%;}
+
 #feature, .article {
 	height: 10em;
 	margin-bottom: 1em;
 	background-color: #efefef;}
 
-#nav {
-	background-color: f9aaff;
-	padding: 0.5em 0;
-	margin: 1%;}
+
 
