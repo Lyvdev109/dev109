@@ -13,6 +13,17 @@ body {
 	background-size: cover;
 	background-position: center center;}
 
+h1 {
+	text-align: center;
+	color: pink;
+	font-family: 'DowntownEleganceRegular';
+	font-size: 2em;}
+	
+p {
+	font-family: 'DowntownEleganceRegular';
+   	font-weight: normal;
+   	font-style: normal;}
+
 #content {
 	overflow: auto;}
 
