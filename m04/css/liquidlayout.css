@@ -26,8 +26,8 @@ li {
 	display: inline;
 	padding: 0.5em;}
 
-#nav, #footer {
-	background-color: #efefef;
+#footer {
+	background-color: #ffbdaa;
 	padding: 0.5em 0;}
 
 #feature, .article {
@@ -36,4 +36,5 @@ li {
 	background-color: #efefef;}
 
 #nav {
-	background-color: f9aaff;}
+	background-color: f9aaff;
+	padding: 0.5em 0;}
