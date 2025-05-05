@@ -18,8 +18,8 @@ var msg = '<h2>Multiplication Table</h2>';              // Message
   }
 }*/
 
-// table is for multiplicatoin 
-if (operator === 'multiplication') {
+// attempt for the table to be multiplication (didnt work)
+/*if (operator === 'multiplication') {
   //do multiplication
 while (i<11) {
   msg += + 'x' + table + '=' + (i * table) + '<br />';
@@ -31,6 +31,12 @@ while (i < 11) {
   msg += i + '+' + table + '=' + (i + table) + '<br />';
   i++;
 }
+}*/
+
+// Do multiplication
+while (i < 11) {
+  msg += i + ' x ' + table + ' = ' + (i * table) + '<br />';
+  i++;
 }
 
 // Write the message into the page
