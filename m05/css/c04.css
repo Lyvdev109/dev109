@@ -7,7 +7,7 @@ body {
 	font-size: 150%;
 	margin: 0px 0px 0px 0px;}
 
-h1 {
+h1, h2 {
 	background-image: url('https://javascriptbook.com/code/c04/images/bullseye-logo.png');
 	background-repeat: no-repeat;
 	/* padding: 60px; */
