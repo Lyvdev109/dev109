@@ -1,4 +1,4 @@
-var tableInput = prompt('Please enter a number for the table'); //prompt message
+var tableInput = prompt('Please enter a number, 0-10, for the multiplication table'); //prompt message
 var table = tableInput;             // Setting table for user input
 var operator = 'addition'; // Type of calculation
 var i = 1;                 // Set counter to 1
