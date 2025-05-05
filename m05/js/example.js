@@ -3,7 +3,7 @@ var table = tableInput;             // Setting table for user input
 var operator = 'addition'; // Type of calculation
 var i = 1;                 // Set counter to 1
 var msg = '<h2>Multiplication Table</h2>';              // Message
-if (table === null || isNan(table)) {    // Response to an input that is not a number
+if (table === null || isNaN(table)) {    // Response to an input that is not a number
   table = 0;
 }
 
