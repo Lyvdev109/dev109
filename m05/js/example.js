@@ -1,5 +1,5 @@
 var tableInput = prompt('Please enter a number for the table'); //prompt message
-var table = 3;             // Unit of table
+var table = tableInput;             // Setting table for user input
 var operator = 'addition'; // Type of calculation
 var i = 1;                 // Set counter to 1
 var msg = '<h2>Multiplication Table</h2>';              // Message
