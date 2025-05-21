@@ -129,7 +129,7 @@ function downLeft(pHeight, pColorEven, pColorOdd, pSymbol)
 */
 
 function drawCenteredRhombus (pheight, pColorEven, pColorOdd, pSymbol) {
-  let fullRhombusHTML = "";
+  var fullRhombusHTML = "";
 
   for (var i = 0; i < pHeight; i++) {
     fullRhombusHTML += "<p>";
