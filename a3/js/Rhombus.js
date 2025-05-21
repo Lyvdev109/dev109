@@ -35,7 +35,7 @@ function upRight(pHeight, pColorEven, pColorOdd, pSymbol)
       }
     rLine += "</p>";
     
-// console.log(rLine);
+console.log(rLine);
   }
   document.getElementById("upRight").innerHTML = rLine;
 }
