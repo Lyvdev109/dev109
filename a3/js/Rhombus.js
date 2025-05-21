@@ -7,7 +7,6 @@
 
 // Create differnt parts of the Rhombus
 
-/*
 function createRhombus(pHeight, pColorEven, pColorOdd, pSymbol)
 {
   upRight(pHeight, pColorEven, pColorOdd, pSymbol);
@@ -126,9 +125,9 @@ function downLeft(pHeight, pColorEven, pColorOdd, pSymbol)
   }
   document.getElementById("downLeft").innerHTML = rLine;
 }
-*/
 
-function drawCenteredRhombus (pheight, pColorEven, pColorOdd, pSymbol) {
+
+/*function drawCenteredRhombus (pheight, pColorEven, pColorOdd, pSymbol) {
   var fullRhombusHTML = "";
 
   for (var i = 0; i < pHeight; i++) {
@@ -169,4 +168,4 @@ function drawCenteredRhombus (pheight, pColorEven, pColorOdd, pSymbol) {
   } else {
     console.error("HTML element with ID 'rhombusDisplayArea' not found.");
   }
-}
+}*/
