@@ -6,6 +6,8 @@
 
 
 // Create differnt parts of the Rhombus
+
+/*
 function createRhombus(pHeight, pColorEven, pColorOdd, pSymbol)
 {
   upRight(pHeight, pColorEven, pColorOdd, pSymbol);
@@ -124,5 +126,47 @@ function downLeft(pHeight, pColorEven, pColorOdd, pSymbol)
   }
   document.getElementById("downLeft").innerHTML = rLine;
 }
+*/
 
+function drawCenteredRhombus (pheight, pColorEven, pColorOdd, pSymbol) {
+  let fullRhombusHTML = "";
 
+  for (let i = 0; i < pHeight; i++) {
+    fullRhombusHTML += "<p>";
+
+    for (let s = 0; s < pHeight - 1 - i; s++){
+      fullRhombusHTML += "&nbsp;&nbsp;";
+    }
+
+    for (let j = 0; j < (2 * i + 1); j++) {
+      if (j%2) {
+        fullRhombusHTML += "<span style = 'color:" + pColorEven + ";'>" + pSymbol + "</span>";
+      } else {
+        fullRhombusHTML += "<span style = 'color:" + pColorOdd + ";'>" + pSymbol + "</span>";
+      }
+    }
+    fullRhombusHTML += "</p>";
+  }
+
+  for (let i = pHeight - 2; i >= 0; i--) {
+    for (let s = 0; s < pHeieght -1 -i; s++) {
+      fullRhombusHTML += "&nbsp;&nbsp;";
+    }
+
+    for let(j = 0; j < (2 * i + 1); j++) {
+      if (j%2) {
+        fullRhombusHTML += "<span style = 'color:" + pColorEven + ";'>" + pSymbol + "</span>";
+      } else {
+        fullRhombusHTML += "<span style = 'color:" + pColorOdd + ";'>" + pSymbol + "</span>";
+      }
+    }
+    fullRhombusHTML += "</p>";
+  }
+
+  const displayElement = document.getElementById ("rhombusDisplayArea");
+  if (displayElement) {
+    displayElement.innerHTML = fullRhombusHTML;
+  } else {
+    console.error("HTML element with ID 'rhombusDisplayArea' not found.");
+  }
+}
