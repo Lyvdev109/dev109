@@ -70,11 +70,17 @@ function downRight(pHeight, pColorEven, pColorOdd, pSymbol)
 function upLeft(pHeight, pColorEven, pColorOdd, pSymbol)
 {
   var rLine ="";
-  for (i=pHeight; i > 0 ; i--) {
+  //for (i=pHeight; i > 0 ; i--) {
+  //modified for line
+  for (let i = 0; i < pHeight; i ++) {
     rLine += "<p>";
 
+    for (let s = 0; s < pHeight - 1 - i; s++) {
+      rLine += "&nbsp;&nbsp;";
+    }
+
 //Create each line of the Rhombus
-    for (j=0; j<i; j++) {
+    for (j=0; j<=i; j++) {
 
 // Is the position EVEN or ODD so we change the color
       if (j%2)
@@ -82,9 +88,9 @@ function upLeft(pHeight, pColorEven, pColorOdd, pSymbol)
         rLine += "<span style = 'color:" + pColorEven + ";'>" + pSymbol +" </span>";
       else
 //ODD
-        rLine += "<span styele = 'color:" + pColorOdd + ";'>" + pSymbol +" </span>";
+        rLine += "<span style = 'color:" + pColorOdd + ";'>" + pSymbol +" </span>";
     }
-    rLine+="<p>";
+    rLine+="</p>";
 //console.log(rLine);
   }
   document.getElementById("upLeft").innerHTML = rLine;
@@ -94,9 +100,14 @@ function upLeft(pHeight, pColorEven, pColorOdd, pSymbol)
 function downLeft(pHeight, pColorEven, pColorOdd, pSymbol)
 {
   var rLine = "";
-  for (i=pHeight; i>0 ; i--) {
+  //for (i=pHeight; i>0 ; i--) {
+  for (let i = pHeight; i > 0; i--) {
     rLine += "<p>";
 
+    for (let s = 0; s < pHeight - i; s++) {
+      rLine += "&nbsp;&nbsp;";
+    }
+    
 //Create each line of Rhombus
     for (j=0; j<i; j++) {
 
@@ -108,7 +119,7 @@ function downLeft(pHeight, pColorEven, pColorOdd, pSymbol)
 // ODD
         rLine += "<span style = 'color:" + pColorOdd + ";'>" + pSymbol +" </span>";
     }
-    rLine += "<p>";
+    rLine += "</p>";
 //console.log(rLine);
   }
   document.getElementById("downLeft").innerHTML = rLine;
