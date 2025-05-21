@@ -35,7 +35,8 @@ function upRight(pHeight, pColorEven, pColorOdd, pSymbol)
       }
     rLine += "</p>";
     
-console.log(rLine);
+// console.log(rLine); shows what is happening when the code is run
+    
   }
   document.getElementById("upRight").innerHTML = rLine;
 }
