@@ -131,14 +131,14 @@ function downLeft(pHeight, pColorEven, pColorOdd, pSymbol)
 function drawCenteredRhombus (pheight, pColorEven, pColorOdd, pSymbol) {
   let fullRhombusHTML = "";
 
-  for (let i = 0; i < pHeight; i++) {
+  for (var i = 0; i < pHeight; i++) {
     fullRhombusHTML += "<p>";
 
     for (let s = 0; s < pHeight - 1 - i; s++){
       fullRhombusHTML += "&nbsp;&nbsp;";
     }
 
-    for (let j = 0; j < (2 * i + 1); j++) {
+    for (var j = 0; j < (2 * i + 1); j++) {
       if (j%2) {
         fullRhombusHTML += "<span style = 'color:" + pColorEven + ";'>" + pSymbol + "</span>";
       } else {
@@ -148,8 +148,8 @@ function drawCenteredRhombus (pheight, pColorEven, pColorOdd, pSymbol) {
     fullRhombusHTML += "</p>";
   }
 
-  for (let i = pHeight - 2; i >= 0; i--) {
-    for (let s = 0; s < pHeieght -1 -i; s++) {
+  for (var i = pHeight - 2; i >= 0; i--) {
+    for (var s = 0; s < pHeieght -1 -i; s++) {
       fullRhombusHTML += "&nbsp;&nbsp;";
     }
 
