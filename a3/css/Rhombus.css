@@ -22,21 +22,19 @@ label {
   margin-bottom: 5px;
 }
 
-#rhombus-display-container {
+#rhombus-display {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
   margin-top: 20px;
-  border: 1px;
 }
 
-.rhombus-row {
-  display:flex;
-  justfify-content:center;
-  align-itms: flex-start;
+.rhombus-top-half,
+.rhombus-bottom-half {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  line-height: 0
 }
 
 #upLeft, 
@@ -49,7 +47,8 @@ label {
   padding: 0;
 }
 
-#upLeft, #downLeft {
+#upLeft, 
+#downLeft {
   text-align: right;
 }
   
