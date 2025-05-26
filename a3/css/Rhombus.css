@@ -33,9 +33,20 @@ label {
   border: 1px;
 }
 
-#upLeft, #upRight, #downLeft, #downRight {
+.rhombus-row {
+  display:flex;
+  justfify-content:center;
+  align-itms: flex-start;
+}
+
+#upLeft, 
+#upRight, 
+#downLeft, 
+#downRight {
   line-height: 1.2;
   white-space: pre;
+  margin: 0;
+  padding: 0;
 }
 
 #upLeft, #downLeft {
