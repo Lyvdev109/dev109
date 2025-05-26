@@ -1,1 +1,43 @@
+body {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justift-content: flex-start;
+/*  min-height: */
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#rhombus-display-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+  border: 1px;
+}
+
+#upLeft, #upRight, #downLeft, #downRight {
+  line-height: 1.2;
+  white-space: pre;
+}
+
+#upLeft, #downLeft {
+  text-align: right;
+}
+  
 
