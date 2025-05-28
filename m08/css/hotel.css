@@ -57,7 +57,7 @@ p + h2 {
 
 /* details in the black bar */
 #hotelName {
-  text-transformation: uppercase;
+  text-transform: uppercase;
   text-align: center;
   font-size: 120%;
   margin-top: 10px;
