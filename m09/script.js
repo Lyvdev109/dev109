@@ -17,30 +17,44 @@ position.appendChild(newEl);
 var addItemInput = document.getElementById('newItem');
 var addItemButton = document.getElementById('addItemButton');
 var groceryList = document.getElementById('todo')
+var feedbackMessage = document.getElementById('feedbackMessage');
 
 // function to the buttons onClick property
 addItemButton.onclick = function() {
-  var newItemText = addItemInput.value.trim ();
+  feedbackMessage.textContent = '';
+  feedbackMessage.style.color = 'red';
 
-// check to see if input is empty
-  if (newItemText !== "") {
+  let entryWasEmpty = false;
+
+  try {
+    var newItemText = addItemInput.value.trim ();
+// check to see if input is empty 
+    if (newItemText === "") {
+      entryWasEmpty = true;
+      // throw an error
+      throw new Error("The entry was empty.");
+    }
+
+// if entry was not empty then continue with new item on list
 // create new list item
     var newListItem = document.createElement('li');
-
 // create a text node with the user input
   var newListItemText = document.createTextNode(newItemText);
-
 // append the text to a new line
   newListItem.appendChild(newListItemText);
-
 // append the new list to existing unordered list
   groceryList.appendChild(newListItem);
 
 // clear input after adding item
   addItem.value = '';
   addItemInput.focus();
-}
-else {
-  alert("please enter an item to add to the list.");
-}
+} catch (e) {
+// write the error to the console
+    console.log(e);
+  }
+  finally {
+    if(entryWasEmpty) {
+      feedbackMessage.textContent = "ERROR: The entry was empty. No item was entered.";
+      feedbackMessage.style.color = "red";
+    }
 };
