@@ -1,1 +1,11 @@
+/* create new element and store it in a new variable*/
+var newEl = document.createElement('li;);
 
+/* create a text node and store it in a variable */
+var newText = document.createTextNode('quinoa');
+
+/* find the position where the new element should be added */
+var position = document.getElementsByTargetName('ul')[0];
+
+/* insert the new element into its positon */
+position.appendChild(newEl);
