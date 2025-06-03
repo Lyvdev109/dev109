@@ -17,6 +17,7 @@ h1 {
 	background-position: center center;
 	text-align: center;
 	text-indent: -1000%;
+	overflow: hidden;
 	height: 75px;
 	line-height: 75px;
 	width: 117px;
