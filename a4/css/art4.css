@@ -3,6 +3,10 @@ body {
     background-color: #FFF1E7;
 }
 
+#myform {
+    border: 1px;
+}
+
 .warning {
     color:red;
 }
