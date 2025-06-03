@@ -57,4 +57,5 @@ addItemButton.onclick = function() {
       feedbackMessage.textContent = "ERROR: The entry was empty. No item was entered.";
       feedbackMessage.style.color = "red";
     }
+}
 };
