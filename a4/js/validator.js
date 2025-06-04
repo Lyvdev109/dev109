@@ -1,5 +1,5 @@
 function isValid() {
-    if (firstName() && lastName()
+    if (firstName() && lastName() && email()
     )
     return true;
     else
@@ -64,8 +64,35 @@ function lastName() {
     return (validLastname);
 }
 
+Email.addEventListener('blur', email, false);
+function email() {
+    var validEmail = false;
+    var userEmail = document.getElementById("Email").value;
+    var errorMessages = "";
+
+    if (userEmail === "null" || userEmail === "") {
+        errorMessages += "<p>Email address is required.</p>";
+        console.log ("Email invalid - empty");
+    } else if (userEmail.length > 50) {
+        errorMessages += "<p>Email address cannot be more than 50 characters.</p>"
+        console.log("email invalid - length");
+    } else {
+        //2) atpos and dotpos 
+        var atpos = userEmail.indexOf("@");
+        var dotpos = userEmail.lastIndexOf(".");
+
+        if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= userEmail.length {
+            errorMessages += "<p>Invalid email address (ex: example@domain.com). </p>";
+            console.log("Email invalid - format (aptos/dotpos)");
+        } else {
+            validEmail = true;
+            console.log("Email valid");
+        }
+    }
+
+        
 function ValidateForm() {
-    if (firstName() && lastName()) {
+    if (firstName() && lastName() && email()) {
         return true;
     } else {
         document.getElementById("submiterror").innerHTML = "<p><strong> Error submitting - see above</strong></p>";
