@@ -1,5 +1,5 @@
 function isValid() {
-    if (firstName() && lastName() && email() && phone() && username() && password() && address() && city() && state()
+    if (firstName() && lastName() && email() && phone() && username() && password() && address() && city() && state() && country()
     )
     return true;
     else
@@ -256,8 +256,30 @@ function state() {
     return validState;
 }
 
+// new country funciton
+Country.addEventListener('change', country, false);
+Country.addEventListener('blur', country, false);
+
+function country() {
+    var validCountry = false;
+    var userCountry = document.getElementById("Country").value;
+    var errorMessages = "";
+
+// validation check
+    if (userCountry === null || userCountry === "") {
+        errorMessages += "<p> please select a country.</p>";
+        console.log("Country invalid - not selected");
+    }
+    else {
+        validCountry = true;
+        console.log("Country Valid");
+    }
+    document.getElementById("country").innerHTML = errorMessages;
+    return validCountry;
+}
+
 function ValidateForm() {
-    if (firstName() && lastName() && email() && phone() && username() && password() && address() && city() && state()) {
+    if (firstName() && lastName() && email() && phone() && username() && password() && address() && city() && state() && country()) {
         return true;
     } else {
         document.getElementById("submiterror").innerHTML = "<p><strong> Error submitting - see above</strong></p>";
