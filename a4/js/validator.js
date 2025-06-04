@@ -1,5 +1,5 @@
 function isValid() {
-    if (firstName() && lastName() && email() && phone()
+    if (firstName() && lastName() && email() && phone() && username()
     )
     return true;
     else
@@ -133,10 +133,35 @@ Phone.addEventListener('blur', phone, false);
             }
         }
         document.getElementById("phone").innerHTML = errorMessages;
+        return validPhone;
     }
 
+// new username function
+Username.addEventListener('blur', username, false);
+function username() {
+    var validUsername = false;
+    var userName = document.getElementById("Username".value);
+    var errorMessages = "";
+//Validation checks
+    if (userName === null || userName === "") {
+        errorMessages += "<p>Username is required.</p>";
+        console.log("Username invalid - empty");
+    } else if (userName.length > 12) {
+        errorMessages += "<p>Username cannot be greater than 12 characters.</p>";
+    } else if (userName.match("^[a-zA-Z0-9_.-]+$") === null) {
+        errorMessages += "<p>Username contains invalid characters.</p>";
+        console.log("Username invalid - bad characters");
+    }
+    else {
+        validUsername = true;
+        console.log("Username valid");
+    }
+    document.getElementById("username").innerHTML = errorMessages;
+    return validUsername;
+}
+
 function ValidateForm() {
-    if (firstName() && lastName() && email() && phone()) {
+    if (firstName() && lastName() && email() && phone() && username()) {
         return true;
     } else {
         document.getElementById("submiterror").innerHTML = "<p><strong> Error submitting - see above</strong></p>";
