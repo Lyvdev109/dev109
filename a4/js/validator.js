@@ -1,5 +1,5 @@
 function isValid() {
-    if (firstName() && lastName() && email() && phone() && username()
+    if (firstName() && lastName() && email() && phone() && username() && password()
     )
     return true;
     else
@@ -160,8 +160,31 @@ function username() {
     return validUsername;
 }
 
+// password function
+Password.addEventListener('blur', password, false);
+function password() {
+    var validPassword = false;
+    var userPassword = document.getElementById("Password").value;
+    var errorMessages = "";
+
+//Validation check
+    if (userPassword === null || userPassword === "") {
+        errorMessages += "<p>Password is required.</p>";
+        console.log("Password invalid - empty");
+    } else if (userPassword.length > 7) {
+        errorMessages += "<p>Password cannot be greater than 7 characters.</p>";
+        console.log("Password invalid - length too long");
+    }
+    else {
+        validPassword = true;
+        console.log("Password Valid");
+    }
+    document.getElementById("password").innerHTML = errorMessages;
+    return validPassword;
+}
+
 function ValidateForm() {
-    if (firstName() && lastName() && email() && phone() && username()) {
+    if (firstName() && lastName() && email() && phone() && username() && password()) {
         return true;
     } else {
         document.getElementById("submiterror").innerHTML = "<p><strong> Error submitting - see above</strong></p>";
