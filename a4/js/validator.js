@@ -140,7 +140,7 @@ Phone.addEventListener('blur', phone, false);
 Username.addEventListener('blur', username, false);
 function username() {
     var validUsername = false;
-    var userName = document.getElementById("Username".value);
+    var userName = document.getElementById("Username").value;
     var errorMessages = "";
 //Validation checks
     if (userName === null || userName === "") {
@@ -220,7 +220,7 @@ function city() {
         console.log("City invalid - empty");
     } else if (userCity.length > 50) {
         errorMessages += "<p>City cannot be greater than 50 characters.</p>";
-        console.log("City invalid - length is too ling");
+        console.log("City invalid - length is too long");
     } else if (userCity.match("^[a-zA-Z ]+$") === null) {
         errorMessages += "<p>City contains invalid characters.</p>";
         console.log("City invalid - bad characters");
@@ -240,11 +240,11 @@ State.addEventListener('blur', state, false); // keeping blur for consistency
 function state() {
     var validState = false;
     var userState = document.getElementById("State").value;
-    var errorMessage = "";
+    var errorMessages = "";
 
 // Validation check
     if (userState === null || userState === "") {
-        errorMessage += "<p> Please select your state.</p>";
+        errorMessages += "<p> Please select your state.</p>";
         console.log("State invalid - not selected");
     }
     else {
