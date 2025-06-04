@@ -1,5 +1,5 @@
 function isValid() {
-    if (firstName() && lastName() && email() && phone() && username() && password()
+    if (firstName() && lastName() && email() && phone() && username() && password() && address()
     )
     return true;
     else
@@ -183,8 +183,33 @@ function password() {
     return validPassword;
 }
 
+// address function
+Address.addEventListener('blur', address, false);
+function address() {
+    var validAddress = false;
+    var userAddress = document.getElementById("Address").value;
+    var errorMessages = "";
+//validation check
+    if (userAddress === null || userAddress === "") {
+        errorMessages += "<p>Address is required.</p>";
+        console.log("Address invalid - empty");
+    } else if (userAddress.length > 100) {
+        errorMessages += "<p>Address cannot be greater than 100 characters.</p>";
+        console.log("Address invalid - length too long");
+    } else if (userAddress.match("^[a-zA-Z0-9 .,#'-]+$") === null) {
+        errorMessages += "<p> address contains invalid characters </p>";
+        console.log("address invalid - bad characters");
+    }
+    else {
+        validAddress = true;
+        console.log("Address Valid");
+    }
+    document.getElementById("address").innerHTML = errorMessages;
+    return validAddress;
+}
+
 function ValidateForm() {
-    if (firstName() && lastName() && email() && phone() && username() && password()) {
+    if (firstName() && lastName() && email() && phone() && username() && password() && address()) {
         return true;
     } else {
         document.getElementById("submiterror").innerHTML = "<p><strong> Error submitting - see above</strong></p>";
@@ -193,6 +218,3 @@ function ValidateForm() {
     }
 }
 
-
-
-    
