@@ -1,5 +1,5 @@
 function isValid() {
-    if (firstName() && lastName() && email() && phone() && username() && password() && address() && city()
+    if (firstName() && lastName() && email() && phone() && username() && password() && address() && city() && state()
     )
     return true;
     else
@@ -233,8 +233,31 @@ function city() {
     return validCity;
 }
 
+// state function
+State.addEventListener('change', state, false); //Change is better for dropdowns
+State.addEventListener('blur', state, false); // keeping blur for consistency
+
+function state() {
+    var validState = false;
+    var userState = document.getElementById("State").value;
+    var errorMessage = "";
+
+// Validation check
+    if (userState === null || userState === "") {
+        errorMessage += "<p> Please select your state.</p>";
+        console.log("State invalid - not selected");
+    }
+    else {
+        validState = true;
+        console.log("State valid:" + userState);
+    }
+    // error message to HTML
+    document.getElementById("state").innerHTML = errorMessages;
+    return validState;
+}
+
 function ValidateForm() {
-    if (firstName() && lastName() && email() && phone() && username() && password() && address() && city()) {
+    if (firstName() && lastName() && email() && phone() && username() && password() && address() && city() && state()) {
         return true;
     } else {
         document.getElementById("submiterror").innerHTML = "<p><strong> Error submitting - see above</strong></p>";
