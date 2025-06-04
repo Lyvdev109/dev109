@@ -1,5 +1,5 @@
 function isValid() {
-    if (firstName() && lastName() && email() && phone() && username() && password() && address() && city() && state() && country()
+    if (firstName() && lastName() && email() && phone() && username() && password() && address() && city() && state() && country() && zipcode()
     )
     return true;
     else
@@ -278,8 +278,52 @@ function country() {
     return validCountry;
 }
 
+// new zipcode function
+ZipCode.addEventListener('blur', zipCode, false);
+Country.addEventListener('change', zipCode, false); // this reruns the zip validation if the country changes
+
+function zipCode() {
+    var validZipCode = true;
+    var zip = document.getElementById("ZipCode").value;
+    var selectedCountry = document.getElementById("Country").value;
+    var errorMessages = "";
+
+    // 1) check if country is USA
+    if (selectedCountry === "USA") {
+        // if USA zipcode is required
+        if (zip === null || zip === "") {
+            errorMessages += "<p>Zipcode is required for residents in the USA.</p>";
+            validZipCode = false;
+            console.log("zipcode invalid - required in USA");
+        } else if (zip.match(/^\d+$/) === null) {
+            errorMessages += "<p>Zip code must only contain digits.</p>";
+            validZipCode = false;
+            console.log("zipcode invalid - non-numeric");
+        } else if (zip.length !== 5) {
+            errorMessages += "<p>Zipcode must be 5 digits long for USA</p>";
+            validZipCode = false;
+            console.log("Zipcode invalid - USA length not met");
+        }
+    } else {
+        // if the country is not USA
+        if (zip !== null && zip !== "") {
+            if (zip.match(/^\d+$/) === null) {
+                errorMessages += "<p>Zipcode must only contain digits</p>";
+                validZipCode = false;
+                console.log("Zipcode invalid - non-numeric");
+            } else if (zip.length > 5) {
+                errorMessages += "<p>Zipcode cannot be more than 5 digits.</p>";
+                validZipCode = false;
+                console.log("Zipcode invalid - length too long");
+            }
+        }
+    }
+    document.getElementById("zipcode").innerHTML = errorMessages;
+    return validZipCode;
+}
+
 function ValidateForm() {
-    if (firstName() && lastName() && email() && phone() && username() && password() && address() && city() && state() && country()) {
+    if (firstName() && lastName() && email() && phone() && username() && password() && address() && city() && state() && country() && zipcode()) {
         return true;
     } else {
         document.getElementById("submiterror").innerHTML = "<p><strong> Error submitting - see above</strong></p>";
