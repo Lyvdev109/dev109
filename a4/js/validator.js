@@ -1,5 +1,5 @@
 function isValid() {
-    if (firstName() && lastName() && email()
+    if (firstName() && lastName() && email() && phone()
     )
     return true;
     else
@@ -22,7 +22,7 @@ function firstName(){
         errorMessages += "<p>The first name is required and cannot be greater than 20 characters</p>";
         console.log("First name invalid — length")
         } else if (firstname.match("^[a-zA-Z ,.'-]+$")===null) {
-            errorMessages += "<p>Invalid caracter in last name (accepts only A-Z, a-z, and ,.'-)</p>";
+            errorMessages += "<p>Invalid caracter in first name (accepts only A-Z, a-z, and ,.'-)</p>";
             console.log("First name invalid — bad characters")
         } else {
                 validFirstname = true;
@@ -33,7 +33,7 @@ function firstName(){
     document.getElementById("fname").innerHTML = errorMessages;
 
     //5) return status of each field
-    return (validFirstname);
+    return validFirstname;
 };
 
 LastName.addEventListener('blur', lastName, false);
@@ -47,21 +47,21 @@ function lastName() {
 
     //3) Do validation
     if (lastname === "null" || lastname === "" || lastname.length > 20) {
-        errorMessages += "<p>The first name is required and cannot be greater than 20 characters</p>";
+        errorMessages += "<p>The last name is required and cannot be greater than 20 characters</p>";
         console.log ("Last name invalid - length");
     } else if (lastname.match ("^[a-zA-Z ,.'-]+$") === null) {
         errorMessages += "<p> Invalid Character in last name (accepts only A-Z, a-z, and , . ' -)</p>";
         console.log("Last name invalid - bad characters");
     } else {
         validLastname = true;
-        console.long("last name valid");
+        console.log("last name valid");
     }
 
     //4) send error message to HTML
     document.getElementById("lname").innerHTML = errorMessages;
 
     //5) return status of each field
-    return (validLastname);
+    return validLastname;
 }
 
 Email.addEventListener('blur', email, false);
@@ -74,14 +74,14 @@ function email() {
         errorMessages += "<p>Email address is required.</p>";
         console.log ("Email invalid - empty");
     } else if (userEmail.length > 50) {
-        errorMessages += "<p>Email address cannot be more than 50 characters.</p>"
+        errorMessages += "<p>Email address cannot be more than 50 characters.</p>";
         console.log("email invalid - length");
     } else {
         //2) atpos and dotpos 
         var atpos = userEmail.indexOf("@");
         var dotpos = userEmail.lastIndexOf(".");
 
-        if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= userEmail.length {
+        if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= userEmail.length) {
             errorMessages += "<p>Invalid email address (ex: example@domain.com). </p>";
             console.log("Email invalid - format (aptos/dotpos)");
         } else {
@@ -90,9 +90,53 @@ function email() {
         }
     }
 
-        
+    document.getElementById("email").innerHTML = errorMessages;
+    return validEmail;
+}
+
+Phone.addEventListener('blur', phone, false);
+    function phone() {
+        var validPhone = false;
+        var rawPhone = document.getElementById("Phone").value;
+        var errorMessages = "";
+
+// Check for required field
+        if (rawPhone === null || rawPhone === "") {
+            errorMessages += "<p>Phone number is required.</p>";
+            console.log("Phone invalid - empty");
+        } else {
+// remove all non-digits
+            var cleanedPhone = rawPhone.replace(/\D/g, '');
+// validate
+            if (cleanedPhone.length === 0) {
+                errorMessages += "<p>Phone number can only contain numerical values.</p>";
+                console.log("Phone invalid - non-numeric");
+            } else if (cleanedPhone.length > 15) {
+                errorMessages += "<p>Phone number cannot exceed 15 digits.</p>";
+                console.log("Phone invalid - length too long");
+            } else if (cleanedPhone.length < 7) {
+                errorMessages += "<p>Phone invalid - length too short</p>";
+            }
+            else {
+                validPhone = true;
+    // auto inserting dashes
+                let formattedPhone =cleanedPhone;
+                if (cleanedPhone.length === 7) {
+                    formattedPhone = cleanedPhone.replace(/(\d{3})(\d{4})/, '$1-$2');
+                } else if (cleanedPhone.length === 10) {
+                    formattedPhone = cleanedPhone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+                } else if (cleanedPhone.length === 11 && cleanedPhone.startsWith('1')) {
+                    formattedPhone = cleanedPhone.replace (/(\d{1})(\d{3})(\d{3})(\d{4})/, '$1-$2-$3-$4');
+                }
+                document.getElementById("Phone").value =formattedPhone;
+                console.log("Phone Valid and Formatted:", formattedPhone);
+            }
+        }
+        document.getElementById("phone").innerHTML = errorMessages;
+    }
+
 function ValidateForm() {
-    if (firstName() && lastName() && email()) {
+    if (firstName() && lastName() && email() && phone()) {
         return true;
     } else {
         document.getElementById("submiterror").innerHTML = "<p><strong> Error submitting - see above</strong></p>";
