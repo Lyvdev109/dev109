@@ -1,5 +1,5 @@
 function isValid() {
-    if (firstName() && lastName() && email() && phone() && username() && password() && address()
+    if (firstName() && lastName() && email() && phone() && username() && password() && address() && city()
     )
     return true;
     else
@@ -208,8 +208,33 @@ function address() {
     return validAddress;
 }
 
+// city function
+City.addEventListener('blur', city, false);
+function city() {
+    var validCity = false;
+    var userCity = document.getElementById("City").value;
+    var errorMessages = "";
+//validation checks
+    if (userCity === null || userCity === "") {
+        errorMessages += "<p>City is required.</p>";
+        console.log("City invalid - empty");
+    } else if (userCity.length > 50) {
+        errorMessages += "<p>City cannot be greater than 50 characters.</p>";
+        console.log("City invalid - length is too ling");
+    } else if (userCity.match("^[a-zA-Z ]+$") === null) {
+        errorMessages += "<p>City contains invalid characters.</p>";
+        console.log("City invalid - bad characters");
+    }
+    else {
+        validCity = true;
+        console.log("City Valid");
+    }
+    document.getElementById("city").innerHTML = errorMessages;
+    return validCity;
+}
+
 function ValidateForm() {
-    if (firstName() && lastName() && email() && phone() && username() && password() && address()) {
+    if (firstName() && lastName() && email() && phone() && username() && password() && address() && city()) {
         return true;
     } else {
         document.getElementById("submiterror").innerHTML = "<p><strong> Error submitting - see above</strong></p>";
