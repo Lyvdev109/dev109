@@ -8,65 +8,6 @@ function isValid() {
         return false;
 }
 
-// new function to make submission go to thank you page 
-function submitFormAndSaveData(event) {
-                    // running existing data
-    if (ValidateForm()) {
-        const formData = {
-            "First Name" : document.getElementById('FirstName').value,
-            "Last Name" : document.getElementById('LastName').value,
-            "Email" : document.getElementById('Email').value,
-            "Phone Number" : document.getElementById('Phone').value,
-            "Username" : document.getElementById('Username').value,
-            "Password" : document.getElementById('Password').value,
-            "Address" : document.getElementById('Address').value,
-            "City" : document.getElementById('City').value,
-            "State" : document.getElementById('State').options[document.getElementById('State').selectedIndex].text,
-            "Country" : document.getElementById('Country').options[document.getElementById('Country').selectedIndex].text,
-            "Zip Code" : document.getElementById('ZipCode').value
-        };
-        // store in local
-        localStorage.setItem('customerFormData', JSON.stringify(formData));
-            // redirect to thankyou page
-        window.location.href = 'ty.html';
-        return true;
-    } else {
-        return false;
-    }
-}
-
-// move to thank you page 
-document.addEventListener('DOMContentLoaded', function() {
-    //check to see if page is on ty page
-    if (window.location.pathname.endsWith('/ty.html') || window.location.pathname.endsWith('/dev109/a4/ty.html')) {
-        const dataDisplayDiv = document.getElementById('customerDataDisplay');
-        const storeData = localStorage.getItem('customerformData');
-
-        if (storedData) {
-            const formData = JSON.parse(storedData);
-
-            let tableHTML = '<table>';
-            tableHTML +='<thead><tr><th>Field</th><th>Value</th></tr></thead>';
-            tableHTML += '<tbody>';
-
-            for (const key in formData) {
-                // make password hidden
-                if (formData.hasOwnProperty(key)) {
-                    let displayValue = formData[key];
-                    if (key === "Password") {
-                    displayValue = '********';
-                }
-                tableHTML +=`<tr><td>${key}</td><td>${displayValue}</td></tr>`;
-            }
-        }
-        tableHTML += '</tbody></table>';
-        dataDisplayDiv.innerHTML = tableHTML;
-    } else {
-        dataDisplayDiv.innerHTML = '<p>No submission data found. Please try again</p>';
-    }
-}
-                          });
-
 FirstName.addEventListener('blur', firstName, false);
 function firstName(){
     //1) Create variable
