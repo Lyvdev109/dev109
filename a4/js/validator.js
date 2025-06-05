@@ -29,9 +29,8 @@ function submitFormAndSaveData(event) {
         localStorage.setItem('customerFormData', JSON.stringify(formData));
             // redirect to thankyou page
         window.location.href = 'ty.html';
-        return false;
+        return true;
     } else {
-        event.preventDefault();
         return false;
     }
 }
@@ -52,8 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             for (const key in formData) {
                 // make password hidden
-                let displayValue = formData[key];
-                if (key === "Password") {
+                if (formData.hasOwnProperty(key)) {
+                    let displayValue = formData[key];
+                    if (key === "Password") {
                     displayValue = '********';
                 }
                 tableHTML +=`<tr><td>${key}</td><td>${displayValue}</td></tr>`;
