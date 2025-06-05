@@ -7,7 +7,7 @@
         <title>Artifact 04</title>
     </head>
     <body>
-        <form id="myform" action="ty.html" onsubmit="return ValidateForm();">
+        <form id="myform" action="ty.html" onsubmit="return submitFormAndSaveData(event);">
     <!-- First name -->
             <p>
                 <label for='FirstName'>First Name:</label>
@@ -158,5 +158,33 @@
             <div id = "errorMessages"></div>
         </form>
         <script src="js/validator.js" type="text/javascript"></script>
+        <script>
+            function submitFormAndSaveData(event) {
+                // running existing data
+                if (ValidationForm()) {
+                    const formData = {
+                        "First Name" : document.getElementById('FirstName').value,
+                        "Last Name" : document.getElementById('LastName').value,
+                        "Email" : document.getElementById('Email').value,
+                        "Phone Number" : document.getElementById('Phone').value,
+                        "Username" : document.getElementById('Username').value,
+                        "Password" : document.getElementById('Password').value,
+                        "Address" : document.getElementById('Address').value,
+                        "City" : document.getElementById('City').value,
+                        "State" : document.getElementById('State').options[document.getElementById('State').selectedIndex].text,
+                        "Country" : document.getElementById('Country').options[document.getElementById('Country').selectedIndex].text,
+                        "Zip Code" : document.getElementById('ZipCode').value
+                    };
+                    // store in local
+                    localStorage.setItem('customerFormData', Json.stringify(formData));
+                    // redirect to thankyou page
+                    window.location.href = 'ty.html';
+                    return false;
+                } else {
+                    event.preventDefault();
+                    return false;
+                }
+            }
+        </script>
     </body>
 </html>
