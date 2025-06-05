@@ -11,7 +11,7 @@ function isValid() {
 // new function to make submission go to thank you page 
 function submitFormAndSaveData(event) {
                     // running existing data
-    if (ValidationForm()) {
+    if (ValidateForm()) {
         const formData = {
             "First Name" : document.getElementById('FirstName').value,
             "Last Name" : document.getElementById('LastName').value,
@@ -26,7 +26,7 @@ function submitFormAndSaveData(event) {
             "Zip Code" : document.getElementById('ZipCode').value
         };
         // store in local
-        localStorage.setItem('customerFormData', Json.stringify(formData));
+        localStorage.setItem('customerFormData', JSON.stringify(formData));
             // redirect to thankyou page
         window.location.href = 'ty.html';
         return false;
@@ -39,15 +39,15 @@ function submitFormAndSaveData(event) {
 // move to thank you page 
 document.addEventListener('DOMContentLoaded', function() {
     //check to see if page is on ty page
-    if (window.loacation.pathname.endsWith('/ty.html') || window.location.pathname.endsWith('/dev109/a4/ty.html')) {
+    if (window.location.pathname.endsWith('/ty.html') || window.location.pathname.endsWith('/dev109/a4/ty.html')) {
         const dataDisplayDiv = document.getElementById('customerDataDisplay');
-        const storeData = locationStorage.getItem('customerformData');
+        const storeData = localStorage.getItem('customerformData');
 
         if (storedData) {
             const formData = JSON.parse(storedData);
 
             let tableHTML = '<table>';
-            tableHTML +='<thead><tr><th>Field</th>Value</th></tr></thead>';
+            tableHTML +='<thead><tr><th>Field</th><th>Value</th></tr></thead>';
             tableHTML += '<tbody>';
 
             for (const key in formData) {
@@ -56,16 +56,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (key === "Password") {
                     displayValue = '********';
                 }
-                tableHTML +='<tr><td>${key}</td><td>${displayValue}</td></tr>';
+                tableHTML +=`<tr><td>${key}</td><td>${displayValue}</td></tr>`;
             }
         }
         tableHTML += '</tbody></table>';
         dataDisplayDiv.innerHTML = tableHTML;
     } else {
-        dataDisplayDiv.innerHTML = '<p>No submission data found. Please try again</p>";
+        dataDisplayDiv.innerHTML = '<p>No submission data found. Please try again</p>';
     }
 }
-                         );
+                          });
 
 FirstName.addEventListener('blur', firstName, false);
 function firstName(){
