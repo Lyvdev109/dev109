@@ -13,7 +13,7 @@ var captionImages =["A Hyena laughing",
                     "A family of elephants"
                    ];
 
- var index=0;
+var index=0;
 var timerInterval; // to store Id for clearing
 var currentCountdown = 4; // initial countdown value
 const SLIDESHOW_DURATION = 4;
@@ -53,58 +53,53 @@ function back(){
  updateImage();
 } 
 
-function updateCountdown () {
- currentCountdown--;
- timerDisplay.textContent = currentCountdown;
- if (currentCountdown <= 0) {
-   clearInterval(timerInterval);
-  next ();
- }
-}
+  function updateCountdown () {
+    currentCountdown--;
+   timerDisplay.textContent = currentCountdown;
+    if (currentCountdown <= 0) {
+      clearInterval(timerInterval);
+      next ();
+    }
+  }
 
-
- function startTime() {
+function startTime() {
   clearInterval(timerInterval);
   currentCountdown = SLIDESHOW_DURATION;
   timerDisplay.textContent = currentCountdown;
   timerInterval = setInterval (updateCountdown, 1000);
- }
+}
 
-
- function resetTimer () {
+function resetTimer () {
   clearInterval(timerInterval);
   if (autoCheckbox.checked) {
    // only restat of timer is on auto
-   startTimer();
+    startTimer();
   } else {
    // if auto is not selected
-   currentCountdown = 4;
-   timerDisplay.textContent = currentCountdown;
+    currentCountdown = 4;
+    timerDisplay.textContent = currentCountdown;
   }
- }
+}
 
- function autoSlide () {
+function autoSlide () {
   if (autoCheckbox.checked) {
-   resetTimer();
+    resetTimer();
   } else {
-   clearInterval (timerInterval);
-   currentCountdown = SLIDESHOW_DURATION;
-   timerDisplay.textContent = currentCountdown;
+    clearInterval (timerInterval);
+    currentCountdown = SLIDESHOW_DURATION;
+    timerDisplay.textContent = currentCountdown;
   }
- }
-
-
- 
-//var nextButton = document.getElementById("next"); 
-//var previousButton = document.getElementById("previous"); 
+}
+var nextButton = document.getElementById("next"); 
+var previousButton = document.getElementById("previous"); 
 
 previousButton.addEventListener("click",back,false);
 nextButton.addEventListener("click",next,false); 
- autoCheckbox.addEventListener("change", autoSlide, false);
+autoCheckbox.addEventListener("change", autoSlide, false);
 
  // initial setup
- updateImage();
- autoSlide();
+updateImage();
+autoSlide();
 
 
 
