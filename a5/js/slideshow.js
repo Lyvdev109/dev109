@@ -56,6 +56,7 @@ function updateCountdown () {
  currentCountdown--;
  timerDisplay.textContent = currentCountdown;
  if (currentCountdown <= 0) {
+   clearInterval(timerInterval);
   next ();
  }
 }
