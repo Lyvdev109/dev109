@@ -1,16 +1,16 @@
 var myImages =["https://c02.purpledshub.com/uploads/sites/62/2022/11/A-spotted-hyena-laughing-00105b7.jpg?w=1456&webp=1",
                "https://www.planetcustodian.com/wp-content/uploads/2021/05/Beautiful-Pictures-of-Animals-in-Love.jpg",
-               //"https://static.boredpanda.com/blog/wp-content/uploads/2016/01/funny-animals-eating-32__605.jpg",
-              // "https://delavanlakesvet.com/wp-content/uploads/sites/195/2022/03/smiling-cat-for-web.jpg",
-              // "https://onthepulsenews.com/wp-content/webp-express/webp-images/uploads/2021/06/CrystalsHoneyInc-73589-stronges-family-bonds-image1.jpg.webp"
+               "https://static.boredpanda.com/blog/wp-content/uploads/2016/01/funny-animals-eating-32__605.jpg",
+               "https://delavanlakesvet.com/wp-content/uploads/sites/195/2022/03/smiling-cat-for-web.jpg",
+               "https://onthepulsenews.com/wp-content/webp-express/webp-images/uploads/2021/06/CrystalsHoneyInc-73589-stronges-family-bonds-image1.jpg.webp"
               ];
 
 
 var captionImages =["A Hyena laughing",
-                   // "A moment of love between bobcats",
-                   // "A squirral enjoying lunch",
-                   // "A cat being happy",
-                   // "A family of elephants"
+                    "A moment of love between bobcats",
+                    "A squirral enjoying lunch",
+                    "A cat being happy",
+                    "A family of elephants"
                    ];
 
  var index=0;
@@ -26,7 +26,7 @@ var nextButton = document.getElementById("next");
 var previousButton = document.getElementById("previous");
 var autoCheckbox = document.getElementById("auto");
 
-/*
+
  function updateImage(){
   slideshowImage.src = myImages[index];
   slideshowImage.alt = captionImages[index];
@@ -61,7 +61,7 @@ function updateCountdown () {
   next ();
  }
 }
-*/
+
 
  function startTime() {
   clearInterval(timerInterval);
@@ -70,7 +70,7 @@ function updateCountdown () {
   timerInterval = setInterval (updateCountdown, 1000);
  }
 
-/*
+
  function resetTimer () {
   clearInterval(timerInterval);
   if (autoCheckbox.checked) {
@@ -105,7 +105,6 @@ nextButton.addEventListener("click",next,false);
  // initial setup
  updateImage();
  autoSlide();
-*/
 
-console.log("attempting to call startTimer() directly...");
-startTime();
+
+
