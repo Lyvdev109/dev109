@@ -132,7 +132,7 @@ Phone.addEventListener('blur', phone, false);
                 console.log("Phone Valid and Formatted:", formattedPhone);
             }
         }
-        document.getElementById("phone").innerHTML = errorMessages;
+        document.getElementById("phoneDiv").innerHTML = errorMessages;
         return validPhone;
     }
 
